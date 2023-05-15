@@ -1,0 +1,36 @@
+<div>
+    <form (submit)="ValiderChoix()">
+      <select [(ngModel)]="selectedType" name="selectedType">
+        <option value="tous">Tous les types de chambres</option>
+        <option value="1p">1 personne</option>
+        <option value="2p_LS">2 personnes, lits simples</option>
+        <option value="2p_LD">2 personnes, lit double</option>
+        <option value="4p_DO_LD_LS">4 personnes, 1 lit double et 2 lits simples</option>
+        <option value="4p_BA_LS">4 personnes, lits simples et baignoire</option>
+        <option value="delux">Chambre de luxe</option>
+      </select> 
+      <button type="submit">Valider</button>
+    </form> 
+  </div>  
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Numéro de chambre</th>
+          <th>Type de chambre</th>
+          <th>Literie</th>
+          <th>Rangement</th>
+          <th>Sanitaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let chambre of listChambreDispo">
+          <td>{{ chambre.numeroChambre }}</td>
+          <td>{{ chambre.typeDeChambre }}</td>
+          <td>{{ chambre.literie }}</td>
+          <td>{{ chambre.rangement }}</td>
+          <td>{{ chambre.sanitaire }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
