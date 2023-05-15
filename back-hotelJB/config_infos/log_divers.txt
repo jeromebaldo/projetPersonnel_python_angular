@@ -1,0 +1,66 @@
+composition des conteneurs 
+PGADMIN 
+URL : http://localhost:5050/
+Email : admin@admin.com
+Mot de passe : pass
+
+Dans le panneau de gauche de pgAdmin, cliquez sur "Serveurs".
+Cliquez sur le bouton "Ajouter un nouveau serveur".
+Dans l'onglet "Général", donnez un nom à votre serveur (par exemple : "PostgreSQL").
+Dans l'onglet "Connexion", remplissez les informations de connexion suivantes :
+
+    Hôte : postgres
+    Port : 5432 (par défaut)
+    Nom d'utilisateur : user (comme défini dans votre docker-compose)
+    Mot de passe : pass (comme défini dans votre docker-compose)
+
+DATA POUR TEST
+
+CREDIT_CARD
+
+BONNE CARTE 
+name : John Doe
+number : 4242 4242 4242 4242
+expiration_month : 9 
+expiration_year : 2024 
+cvv : 123 
+
+MAUVAISE CARTE - REFUSE PAR SERVICE DE PAIEMENT
+name : John Doe
+number : 4000 0000 0000 0002 
+expiration_month : 9
+expiration_year : 2024
+cvv : 123
+
+MAUVAISE CARTE QUELCONQUE 
+name : Jerome Baldo
+number : 5000 0000 0000 0002 
+expiration_month : 10
+expiration_year : 2028
+cvv : 456
+
+
+SHIPPING INFORMATIONS 
+EX 1
+country Canada 
+address 201, rue Président-Kennedy
+postal_code G7X 3Y7
+city Chicoutimi
+province QC
+email jgnault@uqac.ca
+
+EX2
+country Canada 
+address 222, rue Price
+postal_code G7X 3Y7
+city Saguenay
+province QC
+email bob@uqac.ca
+
+EX3
+country Canada 
+address 222, rue Racine
+postal_code G7X 3Y7
+city Lac-Saint-Jean
+province QC
+email alice@uqac.ca

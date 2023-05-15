@@ -1,0 +1,68 @@
+services:
+
+  cache:
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
+    expose:
+      - '6379'
+
+  db:
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db-hotel-jb
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: pass
+      PGADMIN_ENABLE_DEFAULT_SERVER: "False"
+    ports:
+      - "80:80"
+    links:
+      - db:postgres
+
+  back-hotel-jb:
+    build: ./back-hotelJB
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      FLASK_DEBUG: "True"
+      FLASK_APP: "serveur_hotel_jb"
+      DB_HOST: "db"
+      DB_USER: "user"
+      DB_PASSWORD: "pass"
+      DB_PORT: "5432"
+      DB_NAME: "db-hotel-jb"
+      REDIS_HOST: cache
+
+    command: >
+      bash -c "flask init-db && flask run --host=0.0.0.0"
+
+  front-hotel-jb:
+    build:
+      context: front-hotelJB
+      target: builder
+    ports:
+      - 4200:4200
+    depends_on:
+      - back-hotel-jb
+    volumes:
+      - ./front-hotelJB:/project
+      - /project/node_modules
+
+volumes:
+  db_data:
