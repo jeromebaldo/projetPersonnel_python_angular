@@ -1,7 +1,10 @@
 # projetPersonnel_python_angular
 
-
-## Installation 
+## Installation et exécution de l'application
+## Contexte et objectifs de l'application 
+## Point de situation
+## Sources
+## Changelog
 Réalisé dans le cadre de la matière "Projet Personnel" au sein de l'UQAC. 
 
 L'objectif de cette matière est d'explorer une technologie ou un concept de manière individuel sous la supervision d'un professeur. 
@@ -15,7 +18,6 @@ python flask pour le back-end
 angular pour le front-end 
 
 PostgreSQL
-
 
 Prérequis pour le run de l'application 
 
