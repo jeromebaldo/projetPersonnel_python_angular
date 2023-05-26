@@ -1,5 +1,7 @@
 # projetPersonnel_python_angular
 
+
+## Installation 
 Réalisé dans le cadre de la matière "Projet Personnel" au sein de l'UQAC. 
 
 L'objectif de cette matière est d'explorer une technologie ou un concept de manière individuel sous la supervision d'un professeur. 
