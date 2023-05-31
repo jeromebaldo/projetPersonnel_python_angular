@@ -34,7 +34,10 @@ ouvrir un navigateur à l'adresse suivante => localhost:4200/
 ## Point de situation
 ## Sources
 ## Changelog
-
+### V1 => version initiale 
+### V1.1 => 
+- rajout de méthode pour le client 
+- angular mis sous docker et inclus dans le docker-compose 
 
 
 
