@@ -7,7 +7,7 @@ L'objectif de cette matière est d'explorer une technologie ou un concept de man
 
 Dans ce cadre, j'ai découvert angular ainsi que le concept d'application full-stack. 
 
-
+## Point de situation
 Les couches sont composées : 
 
 - python flask pour le back-end 
@@ -19,8 +19,9 @@ Les couches sont composées :
 ## Installation et exécution de l'application
 
 Prérequis pour le run de l'application 
-
-logiciel docker
+### Logiciels
+- Docker
+- terminal de commande windows
 
 télécharger le dossier
 
@@ -31,10 +32,10 @@ taper la commande docker-compose up
 ouvrir un navigateur à l'adresse suivante => localhost:4200/
 
 
-## Point de situation
 ## Sources
 ## Changelog
-### V1 => version initiale 
+### V1 => 
+- version initiale
 ### V1.1 => 
 - rajout de méthode pour le client 
 - angular mis sous docker et inclus dans le docker-compose 
