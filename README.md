@@ -40,6 +40,7 @@ Prérequis pour le run de l'application
 ### V1.1 => 
 - rajout de méthode pour le client dans la partie serveur
 - angular mis sous docker et inclus dans le docker-compose 
-
+### V1.2 => 
+- correction pour le chemin get /clientHisto dans le serveur , traitement du cas si pas existance du client
 
 

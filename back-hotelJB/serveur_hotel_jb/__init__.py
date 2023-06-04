@@ -40,22 +40,29 @@ def create_app(initial_config=None):
 
     @app.route('/clientHisto', methods=['GET'])
     def get_client_histo():
-        
         client_recherch = request.get_json()
 
-        client_trouv = client.get((client.nom == client_recherch['client']['nom']) & (client.prenom == client_recherch['client']['prenom']))
+        try:
+            client_trouv = client.get((client.nom == client_recherch['client']['nom']) & (client.prenom == client_recherch['client']['prenom']))
+        
+            client_final = [
+                {"nom": client_trouv.nom},
+                {"prenom": client_trouv.prenom},
+                {"date_naissance": client_trouv.date_naissance},
+                {"adresse_postale": client_trouv.adresse_postale},
+                {"telephone": client_trouv.telephone},
+                {"mail": client_trouv.mail},
+                {"moyen_paiement": client_trouv.moyen_paiement}
+            ]
+        
+            return jsonify({'client': client_final}), 200
 
-        client_final =[
-            { "nom": client_trouv.nom},
-            { "prenom": client_trouv.prenom},
-            { "date_naissance": client_trouv.date_naissance},
-            { "adresse_postale": client_trouv.adresse_postale},
-            { "telephone": client_trouv.telephone},
-            { "mail": client_trouv.mail},
-            { "moyen_paiement" : client_trouv.moyen_paiement}
-        ]
-        return jsonify({'client': client_final}), 200
+        except DoesNotExist:
+            return jsonify({'error': 'Le client n\'existe pas'}), 404
+
 
     return app
+
+
 
 
