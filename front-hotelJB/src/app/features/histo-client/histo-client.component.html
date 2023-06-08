@@ -1,0 +1,20 @@
+<div>
+    <p>Donnez le nom et le prénom du client pour l'identifier</p>
+    <form (submit)="ValiderFormulaire()">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" [(ngModel)]="nom" required>
+    
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" [(ngModel)]="prenom" required>
+    
+        <button type="submit">Valider</button>
+    </form>
+</div>
+
+<div *ngIf="(InfoClient.nom).length > 0">
+    <h2>Informations du client :</h2>
+    <p>Nom : {{ InfoClient.nom }}</p>
+    <p>Prénom : {{ InfoClient.prenom }}</p>
+    <!-- Ajoutez d'autres informations du client ici -->
+</div>
+

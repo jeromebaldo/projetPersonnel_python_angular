@@ -7,13 +7,15 @@ import { HeaderMenuComponent } from './core/header-menu/header-menu.component';
 import { ReservChambreComponent } from './features/reserv-chambre/reserv-chambre.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ConstructionComponent } from './features/construction/construction.component';
+import { HistoClientComponent } from './features/histo-client/histo-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderMenuComponent,
     ReservChambreComponent,
-    ConstructionComponent
+    ConstructionComponent,
+    HistoClientComponent
   ],
   imports: [
     BrowserModule,

@@ -52,17 +52,16 @@ services:
     command: >
       bash -c "flask init-db && flask run --host=0.0.0.0"
 
-  front-hotel-jb:
-    build:
-      context: front-hotelJB
-      target: builder
-    ports:
-      - 4200:4200
-    depends_on:
-      - back-hotel-jb
-    volumes:
-      - ./front-hotelJB:/project
-      - /project/node_modules
-
+  #front-hotel-jb:
+    #build:
+      #context: front-hotelJB
+      #target: builder
+    #ports:
+      #- 4200:4200
+    #depends_on:
+      #- back-hotel-jb
+    #volumes:
+      #- ./front-hotelJB:/project
+      #- /project/node_modules
 volumes:
   db_data:
